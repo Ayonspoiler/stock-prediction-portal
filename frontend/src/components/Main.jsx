@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import Header from "./Header";
 
 const Main = () => {
   return (
@@ -18,6 +19,7 @@ const Main = () => {
           <Button text="Login" class="btn-outline-info"/>
         </div>
       </div>
+
     </>
   );
 };
