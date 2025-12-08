@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import axiosInstance from '../axiosInstance';
 const Register = () => {
     const [userName,setUserName]=useState('');
     const [email,setEmail]=useState('');
@@ -16,9 +17,7 @@ const Register = () => {
         //  send data to backend API
         const userData = {username:userName,email:email,password:password};
          try {
-           const response= await axios.post("http://127.0.0.1:8000/api/v1/register/", userData);
-           console.log(response.data);
-           console.log("Registration Successful");
+           const response= await axiosInstance.post("/register/", userData);
            setErrors({});
            setSuccessMessage(true);
          } catch (error) {
